@@ -1,14 +1,16 @@
 public class App {
     public static void main(String[] args) throws Exception {
-         int a, b;
+         boolean cond1 = true;
+         boolean cond2 = false;
 
-            a = 5;
-            b = 6;
-        String resultado = a==b ? "verdadeiro" : "falso";
-        
-    
-        System.out.println(resultado);
+         if (cond1 && cond2 == true) 
+            System.out.println("As duas condições são verdadeiras");
+        else
+            System.out.println("as condições não são verdadeiras");
+            
+         
 
+            
     } 
 }           
 
