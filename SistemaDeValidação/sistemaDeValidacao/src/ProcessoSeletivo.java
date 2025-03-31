@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.ArrayList;
 
@@ -7,9 +8,44 @@ public class ProcessoSeletivo {
 
     public static void main(String[] args) {
         ArrayList<String> aprovados = selecaoCanditados();
-        
         imprimirCandidatosSelecionados(aprovados);
+        for (String candidato : aprovados) {
+            entrandoEmContato(candidato);
+        }
 
+    }
+
+    static void entrandoEmContato(String candidato) {
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
+        do {
+            atendeu = atender();
+            continuarTentando = !atendeu;
+            if (continuarTentando) {
+                tentativasRealizadas++;
+            } else {
+                System.out.println("Contato realizado");
+            }
+        } while (continuarTentando && tentativasRealizadas < 3);
+
+        System.out.println(
+                "Tentativa de contato com o candidato " + candidato + " - Tentativa " + (tentativasRealizadas + 1));
+        atendeu = atender();
+        if (atendeu) {
+            System.out.println("Candidato " + candidato + " atendeu a ligação.");
+            continuarTentando = false;
+        } else {
+            System.out.println("Candidato " + candidato + " não atendeu a ligação.");
+            tentativasRealizadas++;
+
+        }
+
+    }
+
+    // metodo auxiliar para entrar em contato com os candidatos aprovados
+    static boolean atender() {
+        return new Random().nextInt(3) == 1;
     }
 
     static void imprimirCandidatosSelecionados(ArrayList<String> aprovados) {
