@@ -1,7 +1,9 @@
+package apps;
 public class Facebook extends ServicoDeMensagem {
-
+    
     @Override
     public void enviarMensagem() {
+        validarConexao();
         System.out.println("Enviando mensagem pelo Facebook");
     }
 
@@ -10,5 +12,12 @@ public class Facebook extends ServicoDeMensagem {
         System.out.println("recebendo mensagem pelo Facebook");
 
     }
+
+    @Override
+    public void salvarHistoricoMensagem() {
+        System.out.println("Salvando histórico de mensagens do Facebook");
+    }   
+
+    
     
 }
