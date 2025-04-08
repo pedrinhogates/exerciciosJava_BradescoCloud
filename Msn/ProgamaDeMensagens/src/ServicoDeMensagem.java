@@ -1,15 +1,5 @@
-public class ServicoDeMensagem {
-    
-public void enviarMensagem() {
-    //Primeiro validar se está conectado a internet
-    ValidarConectadoInternet ();
+public abstract class ServicoDeMensagem {
+    public abstract void enviarMensagem();
+    public abstract void receberMensagem();
 
-    System.out.println("Enviando mensagem pelo MSN Messenger");
-    }
-    public void receberMensagem() {
-        System.out.println("Recebendo mensagem...");
-    }
-    private void ValidarConectadoInternet() {
-        System.out.println("Validando conexão com a internet...");
-    }
 }
