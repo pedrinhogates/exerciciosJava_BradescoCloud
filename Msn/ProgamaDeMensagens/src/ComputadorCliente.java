@@ -4,5 +4,11 @@ public class ComputadorCliente {
 
         msn.enviarMensagem();
         msn.receberMensagem();
+
+        System.out.println("-------------------------------------------------");
+        
+        Facebook face  = new Facebook ();
+        face.receberMensagem();
+        face.enviarMensagem();
     }
 }
