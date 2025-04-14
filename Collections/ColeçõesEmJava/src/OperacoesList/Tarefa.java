@@ -1,4 +1,4 @@
-package OperaçõesList;
+package OperacoesList;
 
 public class Tarefa {
 
