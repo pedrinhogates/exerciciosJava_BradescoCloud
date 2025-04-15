@@ -10,7 +10,6 @@ public class listaTarefa {
         this.tarefalist = new ArrayList<>();
     }
 
-
     public void adicionarTarefa(String descricao) {
         tarefalist.add(new Tarefa(descricao));
     }
@@ -20,8 +19,8 @@ public class listaTarefa {
         for (Tarefa t : tarefalist) {
             if (t.getDescricao().equalsIgnoreCase(descricao)) {
                 tarefasARemover.add(t);
-            }
-        }
+            } // Correção: fechamento do bloco if
+        } // Correção: fechamento do bloco for
         tarefalist.removeAll(tarefasARemover);
     }
 
@@ -29,7 +28,15 @@ public class listaTarefa {
         return tarefalist.size();
     }
 
-    public void descricaoTarefas () {
+    public void descricaoTarefas() {
         System.out.println(tarefalist);
-        }
     }
+
+    public static void main(String[] args) {
+        listaTarefa lista = new listaTarefa();
+        lista.adicionarTarefa("Estudar Java");
+        lista.adicionarTarefa("Fazer exercícios");
+        lista.descricaoTarefas();
+        System.out.println("Quantidade de tarefas: " + lista.quantidadeTarefas());
+    }
+}
