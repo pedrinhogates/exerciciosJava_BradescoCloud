@@ -1,4 +1,4 @@
-package OperacoesList;
+package CollecList.OperacoesList;
 
 public class Tarefa {
 

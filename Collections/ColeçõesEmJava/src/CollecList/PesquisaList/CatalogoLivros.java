@@ -1,4 +1,4 @@
-package PesquisaList;
+package CollecList.PesquisaList;
 
 import java.util.ArrayList;
 import java.util.List;
