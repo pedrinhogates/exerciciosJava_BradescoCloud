@@ -1,4 +1,4 @@
-package CollecSet;
+package CollecSet.OrdenaçaoSet;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -31,6 +31,6 @@ public class CadastroProdutos {
         
         for (Produto produto : produtosOrdenados) {
             System.out.println(produto.getNome() + " - " + produto.getCodigoBarras() + " - " + produto.getPreco() + " - " + produto.getQuantidadeEstoque());
-        }   
+        }    
     }
 }

@@ -1,4 +1,4 @@
-package CollecSet;
+package CollecSet.OrdenaçaoSet;
 
 public class Produto implements Comparable<Produto> {
     private String nome;

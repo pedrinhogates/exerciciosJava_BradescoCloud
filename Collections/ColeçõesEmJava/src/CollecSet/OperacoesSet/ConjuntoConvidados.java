@@ -1,4 +1,4 @@
-package CollecSet;
+package CollecSet.OperacoesSet;
 
 import java.util.HashSet;
 import java.util.Set;

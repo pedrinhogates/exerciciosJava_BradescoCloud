@@ -1,4 +1,4 @@
-package CollecSet;
+package CollecSet.OperacoesSet;
 
 public class Convidado {
 

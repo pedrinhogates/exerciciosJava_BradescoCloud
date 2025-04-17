@@ -1,4 +1,4 @@
-package CollecSet;
+package CollecSet.PesquisaSet;
 
 public class Contato {
     private String nome;
