@@ -7,7 +7,7 @@ public class Banco {
     
         Conta cp = new ContaPoupanca("0002", 500.00);
 
-        Cliente cliente = new Cliente();
+        Cliente cliente = new Cliente(null, null, cp);
         cliente.setNome("João da Silva"); 
         cliente.setCpf("123.456.789-00");
 

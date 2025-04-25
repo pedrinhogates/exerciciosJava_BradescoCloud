@@ -2,6 +2,11 @@ package Banco;
 
 public class Cliente {
     private String nome;
+    public Cliente(String nome, String cpf, Conta conta) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.conta = conta;
+    }
     private String cpf;
     
     public String getNome() {
