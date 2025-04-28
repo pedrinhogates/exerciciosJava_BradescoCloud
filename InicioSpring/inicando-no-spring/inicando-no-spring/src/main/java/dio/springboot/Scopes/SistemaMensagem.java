@@ -1,4 +1,4 @@
-package dio.springboot;
+package dio.springboot.Scopes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

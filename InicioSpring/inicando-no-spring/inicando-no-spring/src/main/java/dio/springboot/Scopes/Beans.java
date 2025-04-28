@@ -1,4 +1,4 @@
-package dio.springboot;
+package dio.springboot.Scopes;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

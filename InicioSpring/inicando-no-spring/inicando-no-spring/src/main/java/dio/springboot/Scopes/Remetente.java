@@ -1,4 +1,4 @@
-package dio.springboot;
+package dio.springboot.Scopes;
 
 public class Remetente {
     private String nome;
