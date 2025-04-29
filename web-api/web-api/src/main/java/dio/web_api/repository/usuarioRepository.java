@@ -3,11 +3,9 @@ package dio.web_api.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Configuration;
 
 import dio.web_api.model.usuario;
 
-@Configuration
 public class usuarioRepository {
     public void save(usuario usuario) {
         System.out.println("SAVE - Recebendo o usuário na camada de repositório");
