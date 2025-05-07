@@ -1,4 +1,10 @@
-package strategy;
+
+
+import facede.Facade;
+import strategy.Comportamento;
+import strategy.ComportamentoDefensivo;
+import strategy.ComportamentoNormal;
+import strategy.Robo;
 
 public class Test {
     public static void main(String[] args) {
@@ -11,6 +17,13 @@ public class Test {
     robo.mover();
     robo.setcomportamento(defensivo);
     robo.mover();
-    }
+
+    Facade facede = new Facade();
+    facede.migrarCliente("Lucas", "12345678");
+
+}
+
+
+    
 
 }
