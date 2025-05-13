@@ -4,15 +4,17 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import model.CleinteRepository;
+import model.ClienteRepository;
+import model.Endereco;
 import model.Cliente;
 import model.EnderecoRepository;
 import service.ClienteService;
+import service.ViaCepService;
 
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
-    private CleinteRepository cleinteRepository;
+    private ClienteRepository cleinteRepository;
     @Autowired
     private EnderecoRepository enderecoRepository;
 
@@ -30,21 +32,42 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void inserir(Cliente cliente) {
-        enderecoRepository.findById(cliente.getEndereco().getCep());
+        //enderecoRepository.findById(cliente.salvarClienteCep().getCep());
+        salvarClienteCep(cliente);
         
         
 
+    }
+
+    private void salvarClienteCep(Cliente cliente) {
+        String cep = cliente.getEndereco().getCep();
+        Endereco endereco = enderecoRepository.findById(cep).orElseGet(() -> {
+            Endereco novoEndereco = ViaCepService.consultarCep(cep);
+            enderecoRepository.save(novoEndereco);
+            return novoEndereco;
+        });
+        cliente.setEndereco(endereco);
+        cleinteRepository.save(cliente);
     }
 
     @Override
     public void atualizar(Long id, Cliente cliente) {
+        Optional<Cliente> clienteAtualiza = cleinteRepository.findById(id);
+        if (clienteAtualiza.isPresent()) {
+            salvarClienteCep(cliente);
+        } else {
+            throw new RuntimeException("Cliente não encontrado");
+        }   
+            
+        } 
+ 
 
-    }
+    
 
     @Override
     public void deletar(Long id) {
-        // TODO Auto-generated method stub
-
+        cleinteRepository.deleteById(id);
     }
+}    
 
-}
+
